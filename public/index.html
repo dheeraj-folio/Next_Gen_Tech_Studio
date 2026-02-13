@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8FAFC" />
+  <title>Next Gen Tech Studio | 3D &amp; Digital Design</title>
+  <meta name="description" content="We specialize in 3D visualization, animation, CGI advertising, interior design, and digital design solutions for modern brands." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            background: '#F8FAFC',
+            foreground: '#0F172A',
+            card: '#FFFFFF',
+            'card-foreground': '#0F172A',
+            primary: '#3B82F6',
+            'primary-foreground': '#FFFFFF',
+            secondary: '#6366F1',
+            'secondary-foreground': '#FFFFFF',
+            muted: '#F1F5F9',
+            'muted-foreground': '#64748B',
+            accent: '#6366F1',
+            'accent-foreground': '#FFFFFF',
+            border: '#E2E8F0',
+            ring: '#3B82F6',
+          },
+          borderRadius: {
+            lg: '1rem',
+            xl: '1rem',
+            '2xl': '1rem',
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #F8FAFC; color: #0F172A; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slide-in-left {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slide-in-right {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes ping-dot {
+      75%, 100% { transform: scale(2); opacity: 0; }
+    }
+
+    .anim-fade-up { animation: fade-up 0.7s ease-out forwards; }
+    .anim-fade-in { animation: fade-in 0.7s ease-out forwards; }
+    .anim-slide-left { animation: slide-in-left 0.7s ease-out forwards; }
+    .anim-slide-right { animation: slide-in-right 0.7s ease-out forwards; }
+    .anim-hidden { opacity: 0; }
+
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+    .delay-500 { animation-delay: 500ms; }
+    .delay-600 { animation-delay: 600ms; }
+
+    .ping-anim { animation: ping-dot 1s cubic-bezier(0,0,0.2,1) infinite; }
+
+    /* Custom select arrow removal */
+    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- ============================================ -->
+  <!-- NAVBAR -->
+  <!-- ============================================ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Main navigation">
+        <img src="./models/Black_Logo.png" alt="Logo" class="h-[11%] w-[11%]">
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex items-center gap-1">
+        <li><a href="#home"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground rounded-lg hover:bg-muted/60">Home</a>
+        </li>
+        <li><a href="#services"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground rounded-lg hover:bg-muted/60">Services</a>
+        </li>
+        <li><a href="#process"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground rounded-lg hover:bg-muted/60">Process</a>
+        </li>
+        <li><a href="#about"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground rounded-lg hover:bg-muted/60">About</a>
+        </li>
+        <li><a href="#testimonials"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground rounded-lg hover:bg-muted/60">Testimonials</a>
+        </li>
+        <li><a href="#contact"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground rounded-lg hover:bg-muted/60">Contact</a>
+        </li>
+      </ul>
+
+      <a href="#contact"
+        class="hidden md:inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 hover:shadow-md active:scale-95">Get
+        in Touch</a>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-toggle"
+        class="md:hidden flex items-center justify-center h-10 w-10 rounded-lg text-foreground hover:bg-muted/60 transition-colors"
+        aria-expanded="false" aria-label="Open menu">
+        <svg id="menu-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="md:hidden hidden absolute inset-x-0 top-full bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg">
+      <ul class="flex flex-col px-6 py-4 gap-1">
+        <li><a href="#home"
+            class="mobile-link block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted/60 transition-colors">Home</a>
+        </li>
+        <li><a href="#services"
+            class="mobile-link block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted/60 transition-colors">Services</a>
+        </li>
+        <li><a href="#process"
+            class="mobile-link block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted/60 transition-colors">Process</a>
+        </li>
+        <li><a href="#about"
+            class="mobile-link block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted/60 transition-colors">About</a>
+        </li>
+        <li><a href="#testimonials"
+            class="mobile-link block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted/60 transition-colors">Testimonials</a>
+        </li>
+        <li><a href="#contact"
+            class="mobile-link block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted/60 transition-colors">Contact</a>
+        </li>
+        <li class="pt-2"><a href="#contact"
+            class="mobile-link block w-full text-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90">Get
+            in Touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <!-- Background blurs -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div class="absolute -top-40 -right-40 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-accent/5 blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full bg-primary/[0.02] blur-3xl"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 md:py-32">
+        <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+          <!-- Badge -->
+          <div class="anim-hidden scroll-anim inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-1.5 text-sm text-muted-foreground mb-8" data-anim="anim-fade-up">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-primary/60 opacity-75 ping-anim"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+            </span>
+            Creative 3D &amp; Digital Studio &nbsp;|&nbsp; Accepting New Projects
+          </div>
+
+          <!-- Heading -->
+          <h1 class="anim-hidden scroll-anim text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]" data-anim="anim-fade-up" data-delay="100" style="text-wrap:balance">
+            Building Powerful <span class="text-primary">3D Experiences</span> for Modern Brands
+          </h1>
+
+          <!-- Subheading -->
+          <p class="anim-hidden scroll-anim mt-6 md:mt-8 text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed" data-anim="anim-fade-up" data-delay="200" style="text-wrap:pretty">
+            We specialize in photorealistic 3D visualization, cinematic animation,
+            CGI advertising, architectural interior design, and full-stack digital
+            design solutions. From concept to delivery, we transform your vision
+            into stunning visual experiences that captivate audiences and elevate brands.
+          </p>
+
+          <!-- Buttons -->
+          <div class="anim-hidden scroll-anim mt-10 flex flex-col sm:flex-row items-center gap-4" data-anim="anim-fade-up" data-delay="300">
+            <a href="#services" class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-200 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 active:scale-95 w-full sm:w-auto">
+              Explore Our Services
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Highlight Cards -->
+          <div class="anim-hidden scroll-anim mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl" data-anim="anim-fade-up" data-delay="400">
+            <div class="flex flex-col items-center gap-2 rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm px-5 py-5">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <p class="text-sm font-semibold text-foreground">Fast Delivery</p>
+              <p class="text-xs text-muted-foreground text-center leading-relaxed">Projects delivered on time, every time</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm px-5 py-5">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <p class="text-sm font-semibold text-foreground">Premium Quality</p>
+              <p class="text-xs text-muted-foreground text-center leading-relaxed">Industry-leading standards in every project</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm px-5 py-5">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <p class="text-sm font-semibold text-foreground">24/7 Support</p>
+              <p class="text-xs text-muted-foreground text-center leading-relaxed">Round-the-clock assistance for all clients</p>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SERVICES SECTION -->
+    <!-- ============================================ -->
+    <section id="services" class="relative py-24 md:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <p class="anim-hidden scroll-anim text-sm font-semibold uppercase tracking-widest text-primary mb-3" data-anim="anim-fade-up">What We Do</p>
+          <h2 class="anim-hidden scroll-anim text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight" data-anim="anim-fade-up" data-delay="100" style="text-wrap:balance">Comprehensive Creative Services</h2>
+          <p class="anim-hidden scroll-anim mt-5 text-lg text-muted-foreground leading-relaxed" data-anim="anim-fade-up" data-delay="200" style="text-wrap:pretty">
+            From photorealistic 3D visualization and cinematic animation to full-stack
+            web development and brand design, we offer an end-to-end creative pipeline.
+            Each service is backed by industry expertise, cutting-edge tools, and a
+            commitment to exceeding your expectations.
+          </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="services-grid">
+
+          <!-- Service 1 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="6" y="11" width="4" height="8" rx="1"/><rect x="14" y="11" width="4" height="8" rx="1"/><path d="m6 11-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3l-2 2"/><path d="M12 11V4"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">3D Game Assets</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We create high-quality, game-ready 3D assets designed for real-time engines like Unreal and Unity. Our team delivers optimized models with proper topology, UV mapping, and PBR texturing.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Environment &amp; level design assets</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Character models &amp; rigging</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Props, weapons &amp; vehicles</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Texture &amp; material creation (PBR)</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">LOD optimization for all platforms</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="80">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">3D Animation &amp; Motion</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">From character animation to complex mechanical simulations, we produce cinematic-quality motion that tells your story. Our animations are crafted frame by frame for maximum impact.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Character &amp; creature animation</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Mechanical &amp; product animation</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Cinematic sequences &amp; trailers</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Motion graphics &amp; explainers</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Facial capture &amp; lip sync</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="160">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">Product Visualization</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We craft photorealistic 3D product renders that showcase every detail. Whether for e-commerce, catalogs, or marketing campaigns, our renders are indistinguishable from photography.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Photorealistic product renders</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">360-degree interactive views</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Exploded view &amp; cutaway renders</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Packaging &amp; label mockups</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Lifestyle &amp; context scenes</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="240">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">CGI &amp; VFX Advertisement</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We produce eye-catching CGI commercials and visual effects sequences that push creative boundaries. Our VFX pipeline integrates seamlessly with live-action footage.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">CGI commercial production</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Compositing &amp; green screen VFX</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Particle &amp; fluid simulations</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">CGI food &amp; beverage ads</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Product launch reveal videos</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="320">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">Interior Design Visualization</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We create stunning architectural and interior visualizations that bring spaces to life before they are built. From residential to commercial showrooms, our renders communicate design intent.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Residential interior walkthroughs</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Commercial space visualization</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Furniture &amp; fixture rendering</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Lighting &amp; material studies</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Virtual staging for real estate</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="400">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5Z"/><path d="M2 12h20"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">Social Media &amp; Marketing Design</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We design scroll-stopping social media content and marketing visuals that amplify your brand presence across Instagram, LinkedIn, Facebook, YouTube, and beyond.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Social media post &amp; story design</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Ad banners &amp; promotional graphics</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Brand identity &amp; guidelines</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Infographics &amp; data visualization</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Email &amp; newsletter templates</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 7 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="480">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">Website Design &amp; Development</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We build modern, responsive, and performant websites with clean UI/UX that convert visitors into customers. From landing pages to full-scale web applications.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Custom responsive web design</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Next.js &amp; React development</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">E-commerce &amp; Shopify builds</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">SEO optimization &amp; analytics</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">CMS integration &amp; management</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 8 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="560">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">UI/UX Design</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We design intuitive user interfaces and seamless user experiences for web and mobile applications. Our process involves deep research, wireframing, prototyping, and high-fidelity design.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">User research &amp; persona mapping</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Wireframing &amp; prototyping</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">High-fidelity interface design</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Design system creation</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Usability testing &amp; iteration</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 9 -->
+          <div class="anim-hidden scroll-anim group relative flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20" data-anim="anim-fade-up" data-delay="640">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-foreground">Logo &amp; Branding</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">We create distinctive brand identities that communicate your values and differentiate you in the market. From logo design to full brand systems that scale with your business.</p>
+            <ul class="mt-5 flex flex-col gap-2.5 flex-1">
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Logo design &amp; variations</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Color palette &amp; typography selection</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Brand guidelines documentation</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Business card &amp; stationery design</span></li>
+              <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Brand strategy &amp; positioning</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROCESS SECTION -->
+    <!-- ============================================ -->
+    <section id="process" class="relative py-24 md:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <p class="anim-hidden scroll-anim text-sm font-semibold uppercase tracking-widest text-primary mb-3" data-anim="anim-fade-up">How We Work</p>
+          <h2 class="anim-hidden scroll-anim text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight" data-anim="anim-fade-up" data-delay="100" style="text-wrap:balance">Our Creative Process</h2>
+          <p class="anim-hidden scroll-anim mt-5 text-lg text-muted-foreground leading-relaxed" data-anim="anim-fade-up" data-delay="200" style="text-wrap:pretty">We follow a structured yet flexible four-step process that ensures transparency, quality, and on-time delivery for every project we undertake.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Step 1 -->
+          <div class="anim-hidden scroll-anim relative rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20" data-anim="anim-fade-up" data-delay="120">
+            <div class="flex items-start gap-5">
+              <div class="flex flex-col items-center gap-2">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-primary/60 tracking-wider">01</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-foreground">Discovery &amp; Briefing</h3>
+                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">We start by understanding your brand, goals, target audience, and project requirements through a detailed discovery session.</p>
+                <ul class="mt-4 flex flex-col gap-2">
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>In-depth project brief review</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Reference &amp; mood board analysis</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Timeline &amp; milestone planning</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Budget alignment &amp; scope definition</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="anim-hidden scroll-anim relative rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20" data-anim="anim-fade-up" data-delay="240">
+            <div class="flex items-start gap-5">
+              <div class="flex flex-col items-center gap-2">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.674M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-primary/60 tracking-wider">02</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-foreground">Concept &amp; Design</h3>
+                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Our creative team develops initial concepts, wireframes, and visual explorations based on the brief. We present multiple directions and iterate collaboratively.</p>
+                <ul class="mt-4 flex flex-col gap-2">
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Concept sketching &amp; ideation</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Wireframes &amp; low-fidelity prototypes</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Visual design explorations</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Client feedback &amp; revision rounds</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="anim-hidden scroll-anim relative rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20" data-anim="anim-fade-up" data-delay="360">
+            <div class="flex items-start gap-5">
+              <div class="flex flex-col items-center gap-2">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+                </div>
+                <span class="text-xs font-bold text-primary/60 tracking-wider">03</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-foreground">Production &amp; Development</h3>
+                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">This is where the magic happens. Our artists and developers bring the approved concept to life using industry-leading tools, maintaining the highest quality standards.</p>
+                <ul class="mt-4 flex flex-col gap-2">
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>3D modeling, texturing &amp; lighting</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Animation, compositing &amp; VFX</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Frontend &amp; backend development</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Quality assurance &amp; testing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="anim-hidden scroll-anim relative rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20" data-anim="anim-fade-up" data-delay="480">
+            <div class="flex items-start gap-5">
+              <div class="flex flex-col items-center gap-2">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </div>
+                <span class="text-xs font-bold text-primary/60 tracking-wider">04</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-foreground">Delivery &amp; Support</h3>
+                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">We deliver final assets in all required formats, optimized for their intended platforms. Post-delivery, we offer support and revisions to ensure complete satisfaction.</p>
+                <ul class="mt-4 flex flex-col gap-2">
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Final file export &amp; optimization</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Multi-platform format delivery</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Post-delivery revision support</li>
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground"><div class="h-1.5 w-1.5 rounded-full bg-primary/50 shrink-0"></div>Ongoing maintenance &amp; updates</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ABOUT SECTION -->
+    <!-- ============================================ -->
+    <section id="about" class="relative py-24 md:py-32 bg-card">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <!-- Left Text -->
+          <div class="anim-hidden scroll-anim" data-anim="anim-slide-left">
+            <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-3">Who We Are</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight" style="text-wrap:balance">About Next Gen Tech Studio</h2>
+            <p class="mt-6 text-lg text-muted-foreground leading-relaxed">Next Gen Tech Studio is a creative 3D and digital design studio delivering high-quality visualization, animation, and immersive digital experiences. Founded in 2020, we have grown from a small team of passionate creatives into a full-service studio trusted by startups, agencies, and enterprise brands alike.</p>
+            <p class="mt-4 text-muted-foreground leading-relaxed">Our multidisciplinary team combines technical expertise in 3D modeling, VFX compositing, motion design, and web development with a deep understanding of storytelling and brand communication. We do not just create visuals; we craft experiences that move people and drive results.</p>
+            <p class="mt-4 text-muted-foreground leading-relaxed">Whether you need a single product render for your e-commerce store or a full CGI commercial for a global campaign, we bring the same level of dedication, creativity, and attention to detail to every project.</p>
+            <!-- Tools -->
+            <div class="mt-8">
+              <p class="text-sm font-semibold text-foreground mb-3">Tools &amp; Technologies We Use</p>
+              <div class="flex flex-wrap gap-2" id="tools-tags"></div>
+            </div>
+          </div>
+
+          <!-- Right - 3D Model Viewer -->
+          <div class="anim-hidden scroll-anim" data-anim="anim-slide-right">
+            <div class="relative aspect-square rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 border border-border/50 overflow-hidden">
+              <div class="absolute inset-0" style="background:radial-gradient(circle at 30% 30%, rgba(59,130,246,0.08), transparent 70%)"></div>
+              <model-viewer
+                src="./models/Baby_Girl.glb"
+                alt="Interactive 3D Baby Boy model showcasing Next Gen Tech Studio capabilities"
+                auto-rotate
+                camera-controls
+                touch-action="pan-y"
+                interaction-prompt="auto"
+                shadow-intensity="1"
+                exposure="1"
+                style="width:100%;height:100%;border-radius:1.5rem;background:transparent;outline:none;"
+              ></model-viewer>
+              <div class="absolute bottom-4 left-4 right-4 text-center">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-card/90 backdrop-blur-sm border border-border/50 px-3 py-1.5 text-xs font-medium text-muted-foreground">
+                  <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/></svg>
+                  Drag to rotate &middot; Scroll to zoom
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="anim-hidden scroll-anim mt-20 grid grid-cols-2 lg:grid-cols-4 gap-5" data-anim="anim-fade-up" data-delay="300">
+          <div class="text-center p-6 md:p-8 rounded-2xl border border-border/50 bg-background">
+            <div class="flex justify-center mb-4"><div class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div></div>
+            <span class="counter text-4xl md:text-5xl font-bold text-foreground tabular-nums" data-target="150">0</span><span class="text-4xl md:text-5xl font-bold text-foreground">+</span>
+            <p class="mt-2 text-sm font-medium text-muted-foreground">Projects Delivered</p>
+          </div>
+          <div class="text-center p-6 md:p-8 rounded-2xl border border-border/50 bg-background">
+            <div class="flex justify-center mb-4"><div class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.674M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div></div>
+            <span class="counter text-4xl md:text-5xl font-bold text-foreground tabular-nums" data-target="300">0</span><span class="text-4xl md:text-5xl font-bold text-foreground">+</span>
+            <p class="mt-2 text-sm font-medium text-muted-foreground">Creative Concepts</p>
+          </div>
+          <div class="text-center p-6 md:p-8 rounded-2xl border border-border/50 bg-background">
+            <div class="flex justify-center mb-4"><div class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div>
+            <span class="counter text-4xl md:text-5xl font-bold text-foreground tabular-nums" data-target="80">0</span><span class="text-4xl md:text-5xl font-bold text-foreground">+</span>
+            <p class="mt-2 text-sm font-medium text-muted-foreground">Happy Clients</p>
+          </div>
+          <div class="text-center p-6 md:p-8 rounded-2xl border border-border/50 bg-background">
+            <div class="flex justify-center mb-4"><div class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg></div></div>
+            <span class="counter text-4xl md:text-5xl font-bold text-foreground tabular-nums" data-target="5">0</span><span class="text-4xl md:text-5xl font-bold text-foreground">+</span>
+            <p class="mt-2 text-sm font-medium text-muted-foreground">Years of Experience</p>
+          </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="anim-hidden scroll-anim mt-20" data-anim="anim-fade-up" data-delay="400">
+          <div class="max-w-2xl mx-auto text-center mb-12">
+            <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-3">Our Values</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-foreground tracking-tight">What Drives Us Every Day</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-2xl border border-border/50 bg-background p-6 md:p-8">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <h4 class="text-lg font-semibold text-foreground">Precision Craftsmanship</h4>
+              <p class="mt-3 text-sm text-muted-foreground leading-relaxed">Every pixel, polygon, and frame is meticulously crafted. We obsess over the details so you don't have to, delivering work that meets the highest industry standards.</p>
+            </div>
+            <div class="rounded-2xl border border-border/50 bg-background p-6 md:p-8">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h4 class="text-lg font-semibold text-foreground">Client-First Approach</h4>
+              <p class="mt-3 text-sm text-muted-foreground leading-relaxed">We believe in transparent communication, collaborative workflows, and building lasting partnerships. Your vision drives every decision we make throughout the project lifecycle.</p>
+            </div>
+            <div class="rounded-2xl border border-border/50 bg-background p-6 md:p-8">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+              </div>
+              <h4 class="text-lg font-semibold text-foreground">Innovation at Core</h4>
+              <p class="mt-3 text-sm text-muted-foreground leading-relaxed">We stay at the forefront of technology, adopting the latest tools, techniques, and trends in 3D, VFX, and digital design to give your brand a competitive edge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TESTIMONIALS SECTION -->
+    <!-- ============================================ -->
+    <section id="testimonials" class="relative py-24 md:py-32 bg-card">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <p class="anim-hidden scroll-anim text-sm font-semibold uppercase tracking-widest text-primary mb-3" data-anim="anim-fade-up">Client Testimonials</p>
+          <h2 class="anim-hidden scroll-anim text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight" data-anim="anim-fade-up" data-delay="100" style="text-wrap:balance">What Our Clients Say</h2>
+          <p class="anim-hidden scroll-anim mt-5 text-lg text-muted-foreground leading-relaxed" data-anim="anim-fade-up" data-delay="200" style="text-wrap:pretty">We take pride in building lasting relationships with our clients. Here is what some of them have to say about working with Next Gen Tech Studio.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="testimonials-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONTACT SECTION -->
+    <!-- ============================================ -->
+    <section id="contact" class="relative py-24 md:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <p class="anim-hidden scroll-anim text-sm font-semibold uppercase tracking-widest text-primary mb-3" data-anim="anim-fade-up">Get in Touch</p>
+          <h2 class="anim-hidden scroll-anim text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight" data-anim="anim-fade-up" data-delay="100" style="text-wrap:balance">Let's Start Your Project</h2>
+          <p class="anim-hidden scroll-anim mt-5 text-lg text-muted-foreground leading-relaxed" data-anim="anim-fade-up" data-delay="200" style="text-wrap:pretty">Have a project in mind? Whether it is a quick question or a detailed brief, we would love to hear from you. Fill out the form below and our team will get back to you within 24 hours.</p>
+        </div>
+
+        <div class="anim-hidden scroll-anim grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16" data-anim="anim-fade-up" data-delay="300">
+  <!-- Form -->
+          <form id="contact-form" class="lg:col-span-3 flex flex-col gap-5" action="https://formsubmit.co/info@nextgentechstudio.com" method="POST">
+            <!-- FormSubmit config (hidden) -->
+            <input type="hidden" name="_subject" value="New Enquiry from Next Gen Tech Studio Website" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+                <label for="name" class="block text-sm font-medium text-foreground mb-2">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-foreground mb-2">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@company.com" required class="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="phone" class="block text-sm font-medium text-foreground mb-2">Phone Number <span class="text-muted-foreground font-normal">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 78775 67080" class="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+              </div>
+              <div>
+                <label for="service" class="block text-sm font-medium text-foreground mb-2">Service Interested In</label>
+                <select id="service" name="Service Interested In" class="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 appearance-none">
+                  <option value="">Select a service</option>
+                  <option value="3D Game Assets">3D Game Assets</option>
+                  <option value="3D Animation &amp; Motion">3D Animation &amp; Motion</option>
+                  <option value="Product Visualization">Product Visualization</option>
+                  <option value="CGI &amp; VFX Advertisement">CGI &amp; VFX Advertisement</option>
+                  <option value="Interior Design Visualization">Interior Design Visualization</option>
+                  <option value="Social Media &amp; Marketing">Social Media &amp; Marketing</option>
+                  <option value="Website Design &amp; Development">Website Design &amp; Development</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="Logo &amp; Branding">Logo &amp; Branding</option>
+                  <option value="Other / Multiple Services">Other / Multiple Services</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="budget" class="block text-sm font-medium text-foreground mb-2">Estimated Budget <span class="text-muted-foreground font-normal">(optional)</span></label>
+              <select id="budget" name="Estimated Budget" class="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 appearance-none">
+                <option value="">Select a range</option>
+                <option value="Under $5,000">Under $5,000</option>
+                <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                <option value="$15,000 - $50,000">$15,000 - $50,000</option>
+                <option value="$50,000+">$50,000+</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-foreground mb-2">Project Details</label>
+              <textarea id="message" name="Project Details" rows="5" placeholder="Tell us about your project: What do you need? What are your goals? Do you have a timeline in mind?" required class="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button id="submit-btn" type="submit" class="inline-flex items-center justify-center gap-2 self-start rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-200 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+              <span id="btn-text">Send Message</span>
+              <svg id="btn-icon-send" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg id="btn-icon-loading" class="h-4 w-4 hidden animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            </button>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="form-success" class="hidden rounded-xl border border-green-200 bg-green-50 p-5 text-center">
+              <div class="flex items-center justify-center gap-2 mb-2">
+                <svg class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <p class="text-base font-semibold text-green-800">Message Sent Successfully!</p>
+              </div>
+              <p class="text-sm text-green-700">Thank you for reaching out. We will get back to you at <strong>info@nextgentechstudio.com</strong> within 24 hours.</p>
+            </div>
+
+            <!-- Error Message (hidden by default) -->
+            <div id="form-error" class="hidden rounded-xl border border-red-200 bg-red-50 p-5 text-center">
+              <div class="flex items-center justify-center gap-2 mb-2">
+                <svg class="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                <p class="text-base font-semibold text-red-800">Something went wrong</p>
+              </div>
+              <p class="text-sm text-red-700">Please try again or email us directly at <a href="mailto:info@nextgentechstudio.com" class="underline font-medium">info@nextgentechstudio.com</a></p>
+            </div>
+          </form>
+
+          <!-- Contact Info -->
+          <div class="lg:col-span-2 flex flex-col gap-6">
+            <div class="rounded-2xl border border-border/50 bg-card p-6 md:p-8">
+              <h3 class="text-lg font-semibold text-foreground mb-6">Contact Information</h3>
+              <div class="flex flex-col gap-5">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                  <div><p class="text-sm font-medium text-foreground">Email</p><a href="mailto:info@nextgentechstudio.com" class="text-sm text-muted-foreground hover:text-primary transition-colors">info@nextgentechstudio.com</a></div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                  <div><p class="text-sm font-medium text-foreground">Phone</p><p class="text-sm text-muted-foreground">+91 78775 68070</p></div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                  <div><p class="text-sm font-medium text-foreground">Location</p><p class="text-sm text-muted-foreground">Indiagate, Sitaura, Sanganer, Jaipur 302033</p><p class="text-xs text-muted-foreground mt-0.5">Serving clients worldwide</p></div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                  <div><p class="text-sm font-medium text-foreground">Working Hours</p><p class="text-sm text-muted-foreground">Mon - Sat: 9:00 AM - 7:00 PM IST</p><p class="text-xs text-muted-foreground mt-0.5">Weekend support available on request</p></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-border/50 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 p-6 md:p-8">
+              <p class="text-base font-semibold text-foreground mb-4">Why Work With Us</p>
+              <ul class="flex flex-col gap-3">
+                <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Free initial consultation for all new clients</span></li>
+                <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Detailed project estimate within 48 hours</span></li>
+                <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Flexible pricing: per-project or retainer options</span></li>
+                <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">NDA and confidentiality agreements available</span></li>
+                <li class="flex items-start gap-2.5"><svg class="h-4 w-4 mt-0.5 shrink-0 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-sm text-muted-foreground leading-snug">Dedicated project manager for every engagement</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="relative bg-card border-t border-border/50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-16 md:py-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="items-center gap-2 mb-4">
+<img src="./models/Black_Logo.png" alt="Logo" class="h-[82%] w-[82%]">
+            <span class="text-2xl font-bold text-foreground tracking-tight">Next Gen Tech Studio</span>
+          </div>
+          <p class="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">A creative 3D and digital design studio delivering high-quality visualization, animation, and immersive digital experiences for brands worldwide.</p>
+          <div class="flex items-center gap-3">
+            <a href="https://www.facebook.com/nextgentechstudio" target="_blank" aria-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary hover:border-primary/20"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/nextgentechstudio/" target="_blank" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary hover:border-primary/20"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.linkedin.com/company/nextgentechstudio/" target="_blank" aria-label="LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary hover:border-primary/20"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="pl-12">
+          <h3 class="text-sm font-semibold text-foreground mb-4">Quick Links</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="#home" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Home</a>
+            </li>
+            <li><a href="#services"
+                class="text-sm text-muted-foreground transition-colors hover:text-foreground">Services</a></li>
+            <li><a href="#process" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Our
+                Process</a></li>
+            <li><a href="#about" class="text-sm text-muted-foreground transition-colors hover:text-foreground">About
+                Us</a></li>
+            <li><a href="#testimonials"
+                class="text-sm text-muted-foreground transition-colors hover:text-foreground">Testimonials</a></li>
+            <li><a href="#contact"
+                class="text-sm text-muted-foreground transition-colors hover:text-foreground">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="pl-2">
+          <h3 class="text-sm font-semibold text-foreground mb-4">Our Services</h3>
+          <ul class="flex flex-col gap-3">
+            <li><a href="#services" class="text-sm text-muted-foreground transition-colors hover:text-foreground">3D
+                Game Assets</a></li>
+            <li><a href="#services" class="text-sm text-muted-foreground transition-colors hover:text-foreground">3D
+                Animation</a></li>
+            <li><a href="#services"
+                class="text-sm text-muted-foreground transition-colors hover:text-foreground">Product Visualization</a>
+            </li>
+            <li><a href="#services" class="text-sm text-muted-foreground transition-colors hover:text-foreground">CGI
+                &amp; VFX Ads</a></li>
+            <li><a href="#services"
+                class="text-sm text-muted-foreground transition-colors hover:text-foreground">Interior Design</a></li>
+            <li><a href="#services"
+                class="text-sm text-muted-foreground transition-colors hover:text-foreground">Website Development</a>
+            </li>
+            <li><a href="#services" class="text-sm text-muted-foreground transition-colors hover:text-foreground">UI/UX
+                Design</a></li>
+            <li><a href="#services" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Logo
+                &amp; Branding</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Summary -->
+        <div>
+          <h3 class="text-sm font-semibold text-foreground mb-4">Contact Us</h3>
+          <div class="flex flex-col gap-4 text-sm text-muted-foreground">
+            <div>
+              <p class="font-medium text-foreground text-xs uppercase tracking-wider mb-1">Email</p>
+              <p>info@nextgentechstudio.com</p>
+            </div>
+            <div>
+              <p class="font-medium text-foreground text-xs uppercase tracking-wider mb-1">Phone</p>
+              <p>+91 78775 68070</p>
+            </div>
+            <div>
+              <p class="font-medium text-foreground text-xs uppercase tracking-wider mb-1">Location</p>
+              <p>Indiagate, Sitaura, Sanganer, Jaipur 302033</p>
+            </div>
+            <div>
+              <p class="font-medium text-foreground text-xs uppercase tracking-wider mb-1">Working Hours</p>
+              <p>Mon - Sat: 9 AM - 7 PM IST</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-16 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-muted-foreground">&copy; 2026 Next Gen Tech Studio. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-xs text-muted-foreground transition-colors hover:text-foreground">Privacy Policy</a>
+          <a href="#" class="text-xs text-muted-foreground transition-colors hover:text-foreground">Terms of Service</a>
+          <a href="#" class="text-xs text-muted-foreground transition-colors hover:text-foreground">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- JAVASCRIPT -->
+  <!-- ============================================ -->
+  <script>
+    // === Mobile Nav Toggle ===
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    let mobileOpen = false;
+
+    mobileToggle.addEventListener('click', () => {
+      mobileOpen = !mobileOpen;
+      mobileMenu.classList.toggle('hidden', !mobileOpen);
+      menuIcon.classList.toggle('hidden', mobileOpen);
+      closeIcon.classList.toggle('hidden', !mobileOpen);
+      mobileToggle.setAttribute('aria-expanded', mobileOpen);
+      document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileOpen = false;
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // === Navbar Scroll Effect ===
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.remove('bg-transparent');
+        navbar.classList.add('bg-background/80', 'backdrop-blur-xl', 'shadow-sm', 'border-b', 'border-border/50');
+      } else {
+        navbar.classList.add('bg-transparent');
+        navbar.classList.remove('bg-background/80', 'backdrop-blur-xl', 'shadow-sm', 'border-b', 'border-border/50');
+      }
+    }, { passive: true });
+
+    // === Scroll Animations (IntersectionObserver) ===
+    const animElements = document.querySelectorAll('.scroll-anim');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const animClass = el.dataset.anim || 'anim-fade-up';
+          const delay = el.dataset.delay || '0';
+          el.style.animationDelay = delay + 'ms';
+          el.classList.remove('anim-hidden');
+          el.classList.add(animClass);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+    animElements.forEach(el => observer.observe(el));
+
+    // === Animated Counters ===
+    let countersAnimated = false;
+    const counterElements = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersAnimated) {
+          countersAnimated = true;
+          counterElements.forEach(counter => {
+            const target = parseInt(counter.dataset.target, 10);
+            const duration = 2000;
+            let startTime = null;
+            function animate(timestamp) {
+              if (!startTime) startTime = timestamp;
+              const progress = Math.min((timestamp - startTime) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              counter.textContent = Math.floor(eased * target);
+              if (progress < 1) requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+          });
+          counterObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    counterElements.forEach(el => counterObserver.observe(el));
+
+    // === Render Tool Tags ===
+    const tools = ['Blender', 'Cinema 4D', 'Unreal Engine', 'Unity', 'After Effects', 'Substance Painter', 'Figma', 'Next.js', 'Photoshop', 'Houdini'];
+    const toolsContainer = document.getElementById('tools-tags');
+    tools.forEach(tool => {
+      const span = document.createElement('span');
+      span.className = 'inline-flex items-center rounded-full border border-border/60 bg-background px-3 py-1 text-xs font-medium text-muted-foreground';
+      span.textContent = tool;
+      toolsContainer.appendChild(span);
+    });
+
+    // === Contact Form AJAX Submission ===
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIconSend = document.getElementById('btn-icon-send');
+    const btnIconLoading = document.getElementById('btn-icon-loading');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Hide any previous messages
+      formSuccess.classList.add('hidden');
+      formError.classList.add('hidden');
+
+      // Show loading state
+      submitBtn.disabled = true;
+      btnText.textContent = 'Sending...';
+      btnIconSend.classList.add('hidden');
+      btnIconLoading.classList.remove('hidden');
+
+      try {
+        const formData = new FormData(contactForm);
+
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' },
+        });
+
+        if (response.ok) {
+          // Show success
+          formSuccess.classList.remove('hidden');
+          contactForm.reset();
+          // Scroll success into view
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } catch (error) {
+        // Show error
+        formError.classList.remove('hidden');
+        formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.textContent = 'Send Message';
+        btnIconSend.classList.remove('hidden');
+        btnIconLoading.classList.add('hidden');
+      }
+    });
+
+    // === Render Testimonials ===
+    const testimonials = [
+      { name: 'Rajesh Mehta', role: 'Founder & CEO', company: 'Zenith Infra, Jaipur', content: 'Next Gen Tech Studio delivered outstanding interior visualizations for our luxury villa project in Jaipur. The photorealistic renders helped us close pre-sales 3x faster. Their understanding of Indian architecture and modern aesthetics is truly impressive.', rating: 5 },
+      { name: 'Ananya Verma', role: 'Marketing Head', company: 'NovaByte Technologies, Bangalore', content: 'We partnered with Next Gen for our entire product launch campaign including CGI commercials and social media creatives. The results exceeded every KPI we set. Engagement went up 45% and our brand recall improved significantly across all platforms.', rating: 5 },
+      { name: 'Vikram Singh Rathore', role: 'Creative Director', company: 'Sandstone Studios, Mumbai', content: 'Working with Next Gen has been a game-changer for our agency. Their 3D animation and VFX work is on par with top international studios. They delivered a 60-second CGI ad film for our client that won multiple awards at the Kyoorius Awards.', rating: 5 },
+      { name: 'Priya Iyer', role: 'Co-Founder', company: 'UrbanNest Interiors, Chennai', content: 'The 3D walkthrough videos they created for our residential projects are phenomenal. Our clients can now experience their future homes before construction begins. It has completely transformed how we present our designs and boosted client confidence.', rating: 5 },
+      { name: 'Michael Torres', role: 'Product Manager', company: 'Apex Gaming, San Francisco', content: 'Next Gen delivered game-ready 3D assets for our mobile title within an incredibly tight deadline. The quality of the models, textures, and animations was top-tier. They understand the technical requirements of game development inside and out.', rating: 5 },
+      { name: 'Sophie Laurent', role: 'Brand Strategist', company: 'Maison Digital, Paris', content: 'From our logo redesign to a full suite of marketing materials and website, Next Gen nailed every aspect of our rebrand. Their design sensibility is modern, clean, and effective. Working across time zones was seamless thanks to their professionalism.', rating: 5 },
+    ];
+
+    const testimonialsGrid = document.getElementById('testimonials-grid');
+    testimonials.forEach((t, i) => {
+      const initials = t.name.split(' ').map(n => n[0]).join('');
+      const stars = Array(t.rating).fill('<svg class="h-4 w-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>').join('');
+      const card = document.createElement('div');
+      card.className = 'anim-hidden scroll-anim flex flex-col rounded-2xl border border-border/50 bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20';
+      card.dataset.anim = 'anim-fade-up';
+      card.dataset.delay = String(i * 100);
+      card.innerHTML = `
+        <svg class="h-8 w-8 text-primary/20 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <p class="text-sm text-muted-foreground leading-relaxed flex-1">${t.content}</p>
+        <div class="flex items-center gap-1 mt-5 mb-4">${stars}<span class="sr-only">${t.rating} out of 5 stars</span></div>
+        <div class="flex items-center gap-3 pt-4 border-t border-border/50">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-bold">${initials}</div>
+          <div><p class="text-sm font-semibold text-foreground">${t.name}</p><p class="text-xs text-muted-foreground">${t.role}, ${t.company}</p></div>
+        </div>
+      `;
+      testimonialsGrid.appendChild(card);
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
